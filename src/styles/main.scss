@@ -7,25 +7,27 @@
 @import "../blocks/modules";
 
 
-$lightColor: #ffffff;
-$accentColor: #00E593;
+$light-color: #ffffff;
+$accent-color: #00E593;
 
+
+
+body {
+    font-family: 'Roboto Slab', serif;
+}
 
 .wrap {
     max-width: 1170px;
     margin: 0 auto;
 }
 
-body {
-    font-family: 'Roboto Slab', serif;
-}
-
 .page-main {
+    padding-bottom: 162px;
     background-color: #009B98;
     background-image: url("../img/bg-main.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    color: $lightColor;
+    color: $light-color;
 }
 
 .header {
@@ -48,23 +50,26 @@ body {
         list-style-type: none;
         display: flex;
         justify-content: flex-end; 
+        font-family: 'Open Sans', 'sans-serif';
         &__item {
+            padding-bottom: 5px;
             margin-left: 19.2px;
+            border-bottom: 3px solid transparent;
+            transition: border-bottom .3s;
+            &:hover {
+                border-bottom: 3px solid $accent-color;
+            }
+        }
+        &__item.active {
+            border-bottom: 3px solid $accent-color;
         }
         &__link {
             display: block;
             box-sizing: border-box;
-            padding-bottom: 5px;
             padding-top: 5px;
-            font-family: 'Open Sans', 'sans-serif';
             text-decoration: none;
-            color: $lightColor;
+            color: $light-color;
             letter-spacing: .9px;
-            transition: border-bottom .3s;
-            border-bottom: 3px solid transparent;
-            &:hover {
-                border-bottom-color: $accentColor;
-            }
         }
     }
 }
@@ -72,13 +77,11 @@ body {
 .block-book {
     display: flex;
     justify-content: flex-start;
-    padding-bottom: 162px;
-    &-box {
-        min-width: 445px;
+    &-demo {
+        width: 445px;
         height: 639px;
-        flex-basis: 445px;
-        margin-right: 55px;
-        background-image: url("../img/book.svg");
+        flex-basis: 500px;
+        background-image: url("../img/book1.svg");
         background-repeat: no-repeat;
     } 
 }
@@ -101,9 +104,10 @@ body {
         font-size: 48px;
         letter-spacing: 1.5px;
         margin-bottom: 40px;
+        font-weight: 700;
         span {
             display: block;
-            color: $accentColor;
+            color: $accent-color;
             margin-top: 10px;
             font-size: 18px;
             font-weight: 400;
@@ -112,22 +116,21 @@ body {
     }
     &__description {
         line-height: 1.6;
-        letter-spacing: .72px;
+        letter-spacing: .73px;
         font-size: 15px;
         margin-bottom: 24px;
     }
     &__btn {
         display: block;
         width: 250px;
-        height: 48px;
+        padding: 13px 0 15px;
         margin-top: 48px;
         margin-bottom: 18px;
         text-decoration: none;
-        color: $lightColor;
+        color: $light-color;
         font-size: 18px;
         letter-spacing: 0.7px;
-        line-height: 45px;
-        background-color: $accentColor;
+        background-color: $accent-color;
         border-radius: 3px;
         text-align: center;
     }
