@@ -100,6 +100,10 @@ body {
         font-size: 18px;
         letter-spacing: 1px;
     }
+    &__name_top {
+        margin-top: 17px;
+        margin-bottom: 19px;
+    }
     &__title {
         font-size: 48px;
         letter-spacing: 1.5px;
@@ -134,6 +138,10 @@ body {
         border-radius: 3px;
         text-align: center;
     }
+    &__btn_author {
+        width: 237px;
+        margin-top: 48px;
+    }
     small {
         font-style: italic;
         font-size: 12px;
@@ -141,4 +149,28 @@ body {
         margin-left: -3px;
     }
 }
+
+.page {
+    padding-top: 160px;
+}
+
+.block-author {
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-ava  {
+    position: relative;
+    &__fon {
+        position: absolute;
+        z-index: -1;
+        right: 0;
+    }
+    &__image {
+        display: block;
+        margin-top: 48px;
+        margin-right: 45px;
+    }
+}
+
 
