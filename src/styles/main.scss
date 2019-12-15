@@ -10,7 +10,7 @@ $light-color: #ffffff;
 $accent-color: #00e593;
 $bg-light-color: #f5f6fa;
 $bg-dark-color: #44444f;
-$bg-accent-color: #5fc9b6;
+$bg-accent-color: #5fc9b4;
 
 body {
 	font-family: "Roboto Slab", serif;
@@ -191,7 +191,7 @@ p {
 }
 
 .page {
-	&_height {
+	&_autor {
 		padding-top: 160px;
 		margin-bottom: 160px;
 	}
@@ -265,9 +265,9 @@ p {
 			margin-bottom: 21px;
 			letter-spacing: 1.1px;
 		}
-		&__links {
-            margin-top: 30px;
-            margin-left: 2px;
+		&__social {
+			margin-top: 28px;
+			margin-left: 2px;
 		}
 		&__content {
 			letter-spacing: 0.8px;
@@ -311,30 +311,33 @@ p {
 					top: 0;
 					font-family: "Open Sans", sans-serif;
 					text-align: center;
-                    line-height: 22px;
+					line-height: 22px;
 					color: $light-color;
-					background-color: $accent-color;
+					background-color: $bg-accent-color;
 					cursor: pointer;
 				}
 			}
 		}
 	}
-}
-
-.block-links {
-	display: flex;
-	align-items: center;
-	&__description {
-		font: bold 18px "Roboto Slab", serif;
-		letter-spacing: 1.1px;
-	}
-	ul {
+	&-social {
 		display: flex;
-	}
-	li {
-		margin-left: 25px;
-	}
-	a {
-		text-decoration: none;
+		align-items: center;
+		&__title {
+			font: bold 18px "Roboto Slab", serif;
+			letter-spacing: 1.1px;
+			margin-right: 23px;
+		}
+		&__list {
+			& > li {
+				display: inline-block;
+				font-size: 18px;
+				margin-right: 12px;
+				vertical-align: middle;
+			}
+			a {
+				color: $accent-color;
+				text-decoration: none;
+			}
+		}
 	}
 }
