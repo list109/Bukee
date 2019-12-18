@@ -34,24 +34,45 @@ p {
 
 .btn {
 	display: inline-block;
+	position: relative;
 	border: none;
 	margin: 0;
 	box-sizing: border-box;
 	outline: none;
+	text-decoration: none;
 	cursor: pointer;
 	&_modifer {
-		padding: 13px 0 15px;
+		padding: 13px 0 14px;
 		text-decoration: none;
 		color: $light-color;
 		font-size: 18px;
 		line-height: 1.2;
 		letter-spacing: 0.7px;
 		background-color: $accent-color;
+		background: linear-gradient(to right bottom, #65e49c, #65e4b0);
 		border-radius: 3px;
 		text-align: center;
-		transition: 0.3s;
-		&:hover {
-			background-color: $bg-accent-color;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 99.5%;
+			height: 100%;
+			top: 2px;
+			left: 50%;
+			transform: translateX(-50%);
+			border-radius: 3px;
+			z-index: -1;
+		}
+	}
+	&_substrate_dark {
+		&::before {
+			background-color: #59bb88;
+		}
+	}
+	&_substrate_light {
+		&::before {
+			background-color: #b2f1be;
 		}
 	}
 }
@@ -77,7 +98,7 @@ p {
 	max-width: 1170px;
 	margin: 0 auto;
 	padding-top: 50px;
-	padding-bottom: 178px;
+	padding-bottom: 177px;
 	&__logo {
 		display: block;
 		width: 138px;
@@ -98,6 +119,7 @@ p {
 			margin-left: 19.2px;
 			border-bottom: 3px solid transparent;
 			transition: border-bottom 0.3s;
+			cursor: pointer;
 			&:hover {
 				border-bottom: 3px solid $accent-color;
 			}
@@ -120,12 +142,40 @@ p {
 	display: flex;
 	justify-content: flex-start;
 	&-demo {
+		position: relative;
 		width: 445px;
 		height: 639px;
 		flex-basis: 500px;
 		border-radius: 3px;
 		background-image: url("../img/book1.svg");
 		background-repeat: no-repeat;
+		&__title {
+			position: absolute;
+			font-size: 36px;
+			text-transform: uppercase;
+			top: 118px;
+			left: 130px;
+			letter-spacing: 1.3px;
+			span {
+				display: block;
+				font-family: "Open Sans", sans-serif;
+				text-transform: initial;
+				color: $accent-color;
+				margin-top: 10px;
+				font-size: 14px;
+				font-weight: 400;
+				letter-spacing: 0.75px;
+			}
+		}
+		&__autor {
+			position: absolute;
+			bottom: 52px;
+			left: 85px;
+			font-size: 14px;
+			font-family: "Open Sans", sans-serif;
+			letter-spacing: 0.7px;
+			color: $accent-color;
+		}
 	}
 }
 
@@ -138,7 +188,7 @@ p {
 	}
 	&__name {
 		margin: 0;
-		margin-top: 2px;
+		margin-top: 3px;
 		margin-bottom: 30px;
 		font-size: 18px;
 		letter-spacing: 1px;
@@ -171,7 +221,7 @@ p {
 	}
 	&__btn-header {
 		margin-top: 23px;
-		margin-bottom: 19px;
+		margin-bottom: 18px;
 		padding-left: 27px;
 		padding-right: 27px;
 	}
@@ -191,16 +241,22 @@ p {
 }
 
 .page {
+	opacity: .99;
 	&_autor {
-		padding-top: 160px;
+		padding-top: 161px;
 		margin-bottom: 160px;
 	}
-	&_standart {
+	&_about {
 		padding-top: 150px;
-		padding-bottom: 160px;
+		padding-bottom: 255px;
 	}
 	&_gray {
 		background-color: $bg-light-color;
+		z-index: -100;
+	}
+	&_books {
+		padding-top: 150px;
+		padding-bottom: 155px;
 	}
 	&__title {
 		font-size: 48px;
@@ -214,6 +270,9 @@ p {
 		letter-spacing: 0.9px;
 		text-align: center;
 		color: $accent-color;
+		&_books {
+			letter-spacing: 1.1px;
+		}
 	}
 }
 
@@ -337,6 +396,88 @@ p {
 			a {
 				color: $accent-color;
 				text-decoration: none;
+			}
+		}
+	}
+}
+
+.block-presentation {
+	text-align: center;
+	&__btn {
+		margin-top: 84px;
+		padding-left: 33px;
+		padding-right: 33px;
+	}
+}
+
+.block-books {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 84px;
+	&__item {
+		flex-basis: 31.8%;
+	}
+	&-demo {
+		width: 269px;
+		height: 409px;
+		margin: 0 auto;
+		margin-bottom: 35px;
+		position: relative;
+		background-image: url("../img/book-mini.svg");
+		background-repeat: no-repeat;
+		border-radius: 3px;
+		&__title {
+			position: absolute;
+			font-size: 24px;
+			font-weight: 700;
+			letter-spacing: 0.9px;
+			text-transform: uppercase;
+			color: $light-color;
+			top: 71px;
+			left: 34px;
+			right: 0;
+			text-align: center;
+		}
+		&__autor {
+			position: absolute;
+			bottom: 28px;
+			left: 80px;
+			letter-spacing: 0.6px;
+		}
+		&__autor,
+		span {
+			font-size: 12px;
+			color: $accent-color;
+			font-weight: 400;
+			font-family: "Open Sans", sans-serif;
+		}
+		span {
+			display: block;
+			margin-top: 6px;
+			text-transform: none;
+			letter-spacing: 0.7px;
+		}
+	}
+	&-desc {
+		text-align: center;
+		&__title {
+			margin-bottom: 17px;
+			letter-spacing: 1px;
+		}
+		&__content,
+		a {
+			font-family: "Open Sans", sans-serif;
+			margin-bottom: 17px;
+			letter-spacing: 0.75px;
+		}
+		a {
+			color: $accent-color;
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: color 0.3s;
+			font-weight: 700;
+			&:hover {
+				color: $bg-accent-color;
 			}
 		}
 	}
