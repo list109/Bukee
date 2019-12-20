@@ -6,8 +6,11 @@
 @import "base/general";
 @import "../blocks/modules";
 
+$color: #696980;
+$dark-color: #44444f;
 $light-color: #ffffff;
 $accent-color: #00e593;
+
 $bg-light-color: #f5f6fa;
 $bg-dark-color: #44444f;
 $bg-accent-color: #5fc9b4;
@@ -16,9 +19,11 @@ body {
 	font-family: "Roboto Slab", serif;
 	font-size: 15px;
 	line-height: 24px;
+	color: $color;
 }
 h3 {
 	font-size: 24px;
+	color: $dark-color;
 }
 
 ol,
@@ -34,7 +39,6 @@ p {
 
 .btn {
 	display: inline-block;
-	position: relative;
 	border: none;
 	margin: 0;
 	box-sizing: border-box;
@@ -42,7 +46,7 @@ p {
 	text-decoration: none;
 	cursor: pointer;
 	&_modifer {
-		padding: 13px 0 14px;
+		padding: 13px 0 16px;
 		text-decoration: none;
 		color: $light-color;
 		font-size: 18px;
@@ -52,28 +56,12 @@ p {
 		background: linear-gradient(to right bottom, #65e49c, #65e4b0);
 		border-radius: 3px;
 		text-align: center;
-		&::before {
-			content: "";
-			display: block;
-			position: absolute;
-			width: 99.5%;
-			height: 100%;
-			top: 2px;
-			left: 50%;
-			transform: translateX(-50%);
-			border-radius: 3px;
-			z-index: -1;
-		}
 	}
 	&_substrate_dark {
-		&::before {
-			background-color: #59bb88;
-		}
+		box-shadow: inset 0px -2px #59bb88;
 	}
 	&_substrate_light {
-		&::before {
-			background-color: #b2f1be;
-		}
+		box-shadow: inset 0px -2px #b2f1be;
 	}
 }
 
@@ -156,6 +144,7 @@ p {
 			top: 118px;
 			left: 130px;
 			letter-spacing: 1.3px;
+			color: $light-color;
 			span {
 				display: block;
 				font-family: "Open Sans", sans-serif;
@@ -181,6 +170,9 @@ p {
 
 .block-text {
 	width: calc(92% - 500px);
+	&_width {
+		width: calc(92% - 507px);
+	}
 	small,
 	&__name,
 	&__description {
@@ -191,19 +183,28 @@ p {
 		margin-top: 3px;
 		margin-bottom: 30px;
 		font-size: 18px;
-		letter-spacing: 1px;
+		letter-spacing: 1.1px;
 		line-height: 1;
+		&_bottom {
+			margin-bottom: 19px;
+			margin-top: 0;
+		}
+		&_top {
+			margin-top: 18px;
+			margin-bottom: 19px;
+		}
 	}
-	&__name_top {
-		margin-top: 17px;
-		margin-bottom: 19px;
-	}
+
 	&__title {
 		font-size: 48px;
-		letter-spacing: 1.5px;
+		letter-spacing: 1.6px;
 		margin-bottom: 38px;
 		font-weight: 700;
 		line-height: 1.2;
+		color: $dark-color;
+		&_light {
+			color: $light-color;
+		}
 		span {
 			display: block;
 			color: $accent-color;
@@ -221,7 +222,7 @@ p {
 	}
 	&__btn-header {
 		margin-top: 23px;
-		margin-bottom: 18px;
+		margin-bottom: 16px;
 		padding-left: 27px;
 		padding-right: 27px;
 	}
@@ -238,17 +239,46 @@ p {
 		letter-spacing: 0.6px;
 		margin-left: -3px;
 	}
+	&__items {
+		margin-top: 41px;
+	}
+	&-item {
+		& + & {
+			margin-top: 55px;
+		}
+		&__date,
+		&__desc {
+			font-family: "Open Sans", sans-serif;
+		}
+		&__date {
+			letter-spacing: 0.8px;
+			margin-bottom: 4px;
+		}
+		&__title {
+			font-size: 18px;
+			font-weight: 700;
+			letter-spacing: 0.96px;
+			margin-bottom: 16px;
+		}
+		&__desc {
+			letter-spacing: 0.75px;
+			margin-bottom: 24px;
+		}
+		&__btn {
+			padding-left: 34px;
+			padding-right: 28px;
+		}
+	}
 }
 
 .page {
-	opacity: .99;
 	&_autor {
-		padding-top: 161px;
+		padding-top: 160px;
 		margin-bottom: 160px;
 	}
 	&_about {
 		padding-top: 150px;
-		padding-bottom: 255px;
+		padding-bottom: 253px;
 	}
 	&_gray {
 		background-color: $bg-light-color;
@@ -258,12 +288,21 @@ p {
 		padding-top: 150px;
 		padding-bottom: 155px;
 	}
+	&_events {
+		padding-top: 161px;
+		padding-bottom: 180px;
+	}
+	&_blog {
+		padding-top: 154px;
+		padding-bottom: 158px;
+	}
 	&__title {
 		font-size: 48px;
 		letter-spacing: 2px;
 		text-align: center;
 		margin-bottom: 13px;
 		line-height: 1;
+		color: $dark-color;
 	}
 	&__subtitle {
 		font-size: 18px;
@@ -273,6 +312,9 @@ p {
 		&_books {
 			letter-spacing: 1.1px;
 		}
+	}
+	&__block-blog {
+		margin-top: 84px;
 	}
 }
 
@@ -285,20 +327,30 @@ p {
 	position: relative;
 	&__svg {
 		position: absolute;
+		display: block;
 		z-index: -1;
 		right: 0;
+		&_left {
+			right: initial;
+			left: 0;
+		}
 	}
 	&__image {
 		display: block;
 		margin-top: 48px;
 		margin-right: 44px;
+		&_left {
+			margin-top: 49px;
+			margin-right: 0;
+			margin-left: 51px;
+		}
 	}
 }
 
 .block-counter {
 	display: flex;
 	justify-content: space-around;
-	margin-top: 172px;
+	margin-top: 173px;
 	p {
 		text-align: center;
 		font-family: "Open Sans", sans-serif;
@@ -385,6 +437,7 @@ p {
 			font: bold 18px "Roboto Slab", serif;
 			letter-spacing: 1.1px;
 			margin-right: 23px;
+			color: $dark-color;
 		}
 		&__list {
 			& > li {
@@ -401,12 +454,11 @@ p {
 	}
 }
 
-.block-presentation {
-	text-align: center;
+.books {
 	&__btn {
-		margin-top: 84px;
-		padding-left: 33px;
-		padding-right: 33px;
+		display: block;
+		margin: 84px auto 0;
+		max-width: 219px;
 	}
 }
 
@@ -479,6 +531,57 @@ p {
 			&:hover {
 				color: $bg-accent-color;
 			}
+		}
+	}
+}
+
+.blog {
+	&__btn {
+		display: block;
+		margin: 0 auto;
+		margin-top: 84px;
+		max-width: 265px;
+	}
+}
+
+.block-blog {
+	display: flex;
+	justify-content: space-between;
+	&-item {
+		flex-basis: 31.5%;
+		&__title {
+			margin-top: 16px;
+			margin-bottom: 3px;
+			letter-spacing: 1px;
+			font-size: 18px;
+		}
+		&__desc {
+			font-family: "Open Sans", sans-serif;
+			letter-spacing: 0.71px;
+		}
+	}
+	&-img {
+		position: relative;
+		width: 369px;
+		height: 224px;
+		overflow: hidden;
+		img {
+			position: absolute;
+			left: 50%;   
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 369px;
+			height: 224px;
+			object-fit: cover;
+		}
+	}
+	&-date {
+		letter-spacing: 1.1px;
+		font-family: "Open Sans", sans-serif;
+		margin-bottom: 12px;
+		a {
+			color: $accent-color;
+			text-decoration: none;
 		}
 	}
 }
