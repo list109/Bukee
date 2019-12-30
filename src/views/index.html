@@ -27,6 +27,7 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="../img/favicons/apple-touch-icon-1024x1024.png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i|Roboto+Slab:100,400,700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="../styles/main.css">
 
     <script src="https://kit.fontawesome.com/544c409c65.js" crossorigin="anonymous"></script>
@@ -106,7 +107,7 @@
                         biography</a>
                 </div>
 
-                <div class="block-ava">
+                <div class="block-ava block-author__position">
                     <svg class="block-ava__svg" width="435" height="558">
                         <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="100%">
                             <stop offset="0" stop-color="#446a87"></stop>
@@ -182,7 +183,7 @@
                         <h3 class="block-books-desc__title">Inception</h3>
                         <p class="block-books-desc__content">Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-                        <a href="##">Read more</a>
+                        <a href="##" class="block-books-desc__btn">Read more</a>
                     </div>
                 </div>
                 <div class="block-books__item">
@@ -194,7 +195,7 @@
                         <h3 class="block-books-desc__title">Fight Club</h3>
                         <p class="block-books-desc__content">Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-                        <a href="##">Read more</a>
+                        <a href="##" class="block-books-desc__btn">Read more</a>
                     </div>
                 </div>
                 <div class="block-books__item">
@@ -206,12 +207,59 @@
                         <h3 class="block-books-desc__title">Daredevils</h3>
                         <p class="block-books-desc__content">Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-                        <a href="##">Read more</a>
+                        <a href="##" class="block-books-desc__btn">Read more</a>
                     </div>
                 </div>
             </div>
             <a href="##" class="btn btn_modifer btn_substrate_light books__btn">Browse all books</a>
         </div>
+    </div>
+
+    <div class="page page_carousel page-carousel">
+        <div class="wrap">
+            <div class="block-carousel">
+                <div class="block-carousel__item">
+                    <div class="block-carousel__avatar">
+                        <div class="block-carousel__thumb">
+                            <img src="../img/feedback.png" alt="Фото автора отзыва">
+                        </div>
+                        <span class="block-carousel__bq"></span>
+                    </div>
+                    <h3 class="block-carousel__autor">Kate Dennings</h3>
+                    <p class="block-carousel__position">Calligraphy Expert</p>
+                    <p class="block-carousel__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                        gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                </div>
+                <div class="block-carousel__item">
+                    <div class="block-carousel__avatar">
+                        <div class="block-carousel__thumb">
+                            <img src="../img/feedback.png" alt="Фото автора отзыва">
+                        </div>
+                        <span class="block-carousel__bq"></span>
+                    </div>
+                    <h3 class="block-carousel__autor">Kate Dennings</h3>
+                    <p class="block-carousel__position">Calligraphy Expert</p>
+                    <p class="block-carousel__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                        gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                </div>
+                <div class="block-carousel__item">
+                    <div class="block-carousel__avatar">
+                        <div class="block-carousel__thumb">
+                            <img src="../img/feedback.png" alt="Фото автора отзыва">
+                        </div>
+                        <span class="block-carousel__bq"></span>
+                    </div>
+                    <h3 class="block-carousel__autor">Kate Dennings</h3>
+                    <p class="block-carousel__position">Calligraphy Expert</p>
+                    <p class="block-carousel__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                        gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                </div>
+            </div>
+        </div>
+        <svg class="page__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 849" ><path d="M-1 0l802 61 799-61v789l-799 60-802-60V0z" fill="#44444f" fill-rule="evenodd"/></svg>
     </div>
 
     <div class="page page_events">
@@ -267,14 +315,16 @@
             <h2 class="page__title">Latest from Blog</h2>
             <p class="page__subtitle">Some of the latest posts from my personal blog</p>
             </h2>
-            <div class="block-blog page__block-blog">
+            <div class="block-blog">
                 <div class="block-blog-item">
                     <div class="block-blog-img"><img src="../img/coffee1.jpg" alt="Фотограф"></div>
                     <h4 class="block-blog-item__title">Importance of light in photography</h4>
                     <div class="block-blog-date">
                         <p>By <a href="##">Emma Anderson</a><span>-</span><a href="##">June 20, 2018</a></p>
                     </div>
-                    <p class="block-blog-item__desc">Lorem ipsum dolor sit amet, conse ctetur adipi scing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo</p>
+                    <p class="block-blog-item__desc">Lorem ipsum dolor sit amet, conse ctetur adipi scing elit, sed do
+                        eius mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                        gravida. Risus commodo</p>
                 </div>
                 <div class="block-blog-item">
                     <div class="block-blog-img"><img src="../img/coffee2.jpg" alt="Фотоапорат"></div>
@@ -282,7 +332,9 @@
                     <div class="block-blog-date">
                         <p>By <a href="##">Emma Anderson</a><span> - </span><a href="##">June 25, 2018</a></p>
                     </div>
-                    <p class="block-blog-item__desc">Lorem ipsum dolor sit amet, conse ctetur adipi scing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo</p>
+                    <p class="block-blog-item__desc">Lorem ipsum dolor sit amet, conse ctetur adipi scing elit, sed do
+                        eius mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                        gravida. Risus commodo</p>
                 </div>
                 <div class="block-blog-item">
                     <div class="block-blog-img"><img src="../img/coffee3.jpg" alt="Девушка"></div>
@@ -290,15 +342,83 @@
                     <div class="block-blog-date">
                         <p>By <a href="##">Emma Anderson</a><span> - </span><a href="##">June 22, 2018</a></p>
                     </div>
-                    <p class="block-blog-item__desc">Lorem ipsum dolor sit amet, conse ctetur adipi scing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo</p>
+                    <p class="block-blog-item__desc">Lorem ipsum dolor sit amet, conse ctetur adipi scing elit, sed do
+                        eius mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                        gravida. Risus commodo</p>
                 </div>
             </div>
             <a class="btn btn_modifer btn_substrate_light blog__btn" href="##">Read more in the blog</a>
         </div>
     </div>
 
+    <div class="page page_letter">
+        <div class="wrap">
+            <div class="block-letter page__letter">
+                <div class="block-letter-item">
+                    <h2 class="block-letter__title">Join Newsletter</h2>
+                    <p class="block-letter__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspen disse ultrices
+                        gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis</p>
+                </div>
+                <div class="block-letter-item block-letter-form">
+                    <input type="text" class="block-letter__input" placeholder="Enter your email">
+                    <button class="btn btn_modifer block-letter__btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="wrap">
+            <div class="block-footer">
+                <div class="block-footer__item">
+                    <a href="##" class="block-footer__logo"></a>
+                    <p class="block-footer__text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                    <p class="block-footer__copyright">&#169; 2018 Bukee Private Limited.</p>
+                </div>
+                <div class="block-footer__item">
+                    <h2 class="block-footer__title">Useful Links</h2>
+                    <ul class="block-footer__list block-footer__list_menu">
+                        <li><a href="##">About Bukee</a></li>
+                        <li><a href="##">Explore Our Ecosystem</a></li>
+                        <li><a href="##">Monthly Community Meetup</a></li>
+                        <li><a href="##">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="block-footer__item">
+                    <h2 class="block-footer__title">Our Contacts</h2>
+                    <ul class="block-footer__list">
+                        <li>Amphitheatre Parkway, CA, 94043</li>
+                        <li>Call us on: <a href="tel:+4455663322">+4455663322</a></li>
+                        <li>Email: <a href="mailto:support@bukee.mail">support@bukee.mail</a></li>
+                    </ul>
+                    <ul class="block-footer__social">
+                        <li><a href="##"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="##"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="##"><i class="fab fa-twitch"></i></a></li>
+                        <li><a href="##"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="##"><i class="fab fa-slack-hash"></i></i></a></li>
+                        <li><a href="##"><i class="fab fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/vendor.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.block-carousel').slick({
+                dots: true,
+                arrows: false
+            });
+        });
+    </script>
 </body>
 
 </html>
