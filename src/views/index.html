@@ -34,25 +34,44 @@
 </head>
 
 <body>
-    @@include("../blocks/modules/header/header.html")
-    @@include("../blocks/modules/footer/footer.html")
 
-    <div class="page-main">
+    <!-- id каждого блока для быстрого перехода по меню через js -->
+
+    <div id="page-main" class="page-main">
 
         <header>
             <div class="header">
                 <a href="##" class="header__logo"></a>
-                <ul class="header-list">
-                    <li class="header-list__item active"><a class="header-list__link" href="##">Home</a></li>
-                    <li class="header-list__item"><a class="header-list__link" href="##">About</a></li>
-                    <li class="header-list__item"><a class="header-list__link" href="##">Contents</a></li>
-                    <li class="header-list__item"><a class="header-list__link" href="##">Books</a></li>
-                    <li class="header-list__item"><a class="header-list__link" href="##">Education</a></li>
-                    <li class="header-list__item"><a class="header-list__link" href="##">Skills</a></li>
-                    <li class="header-list__item"><a class="header-list__link" href="##">Portfolio</a></li>
-                    <li class="header-list__item"><a class="header-list__link" href="##">Clients</a></li>
-                    <li class="header-list__item"><a class="header-list__link" href="##">Contact</a></li>
-                </ul>
+                <div id="headerMenu" class="header-menu">
+                    <ul class="header-list">
+                        <li class="header-list__item active"><a class="header-list__link" href="##"
+                                data-point="page-main">Home</a></li>
+                        <li class="header-list__item"><a class="header-list__link" href="##"
+                                data-point="autor">About</a>
+                        </li>
+                        <li class="header-list__item"><a class="header-list__link" href="##"
+                                data-point="about">Contents</a>
+                        </li>
+                        <li class="header-list__item"><a class="header-list__link" href="##"
+                                data-point="books">Books</a>
+                        </li>
+                        <li class="header-list__item"><a class="header-list__link" href="##"
+                                data-point="carousel">Education</a></li>
+                        <li class="header-list__item"><a class="header-list__link" href="##"
+                                data-point="events">Skills</a>
+                        </li>
+                        <li class="header-list__item"><a class="header-list__link" href="##"
+                                data-point="blog">Portfolio</a>
+                        </li>
+                        <li class="header-list__item"><a class="header-list__link" href="##"
+                                data-point="letter">Clients</a>
+                        </li>
+                        <li class="header-list__item"><a class="header-list__link" href="##"
+                                data-point="footer">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <button id="showMenu" class="header__btn"></button>
             </div>
         </header>
 
@@ -78,7 +97,7 @@
                         cillum dolore eu fugiat nulla
                         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
                         mollit anim id est laborum. Sed ut</p>
-                    <a href="##" class="btn btn_modifer btn_substrate_dark  block-text__btn-header">Buy this book -
+                    <a href="##" class="btn btn_modifer btn_substrate_dark block-text__btn-header">Buy this book -
                         $15.00</a>
                     <small>* Some conditions may applicable</small>
                 </div>
@@ -87,7 +106,7 @@
 
     </div>
 
-    <div class='page page_autor'>
+    <div id="autor" class='page page_autor'>
         <div class="wrap">
             <div class="block-author">
                 <div class="block-text">
@@ -128,7 +147,7 @@
         </div>
     </div>
 
-    <div class="page page_gray page_about">
+    <div id="about" class="page page_gray page_about">
         <div class="wrap">
             <h2 class="page__title">Book Contents</h2>
             <p class="page__subtitle">Let’s see what we have covered in the book</p>
@@ -163,13 +182,26 @@
                         <li>Consectetur adipisicing elit</li>
                         <li>Labore et dolore magna</li>
                     </ol>
-                    <button class="btn btn_modifer btn_substrate_light block-about-table__btn">More</button>
+                    <ol id="moreContentList" class="block-about-table__list block-about-table__list_next">
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Consectetur adipisicing elit</li>
+                        <li>Labore et dolore magna</li>
+                        <li>Consectetur adipisicing elit</li>
+                        <li>Labore et dolore magna</li>
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Consectetur adipisicing elit</li>
+                        <li>Labore et dolore magna</li>
+                        <li>Consectetur adipisicing elit</li>
+                        <li>Labore et dolore magna</li>
+                    </ol>
+                    <button id="moreContent"
+                        class="btn btn_modifer btn_substrate_light block-about-table__btn">More</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="page page_books books">
+    <div id="books" class="page page_books books">
         <div class="wrap">
             <h2 class="page__title">Other Books</h2>
             <p class="page__subtitle page__subtitle_books">Some books you might be interested in</p>
@@ -215,7 +247,7 @@
         </div>
     </div>
 
-    <div class="page page_carousel page-carousel">
+    <div id="carousel" class="page page_carousel page-carousel">
         <div class="wrap">
             <div class="block-carousel">
                 <div class="block-carousel__item">
@@ -259,10 +291,11 @@
                 </div>
             </div>
         </div>
-        <svg class="page__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 849" ><path d="M-1 0l802 61 799-61v789l-799 60-802-60V0z" fill="#44444f" fill-rule="evenodd"/></svg>
+        <svg class="page__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 849">
+            <path d="M-1 0l802 61 799-61v789l-799 60-802-60V0z" fill="#44444f" fill-rule="evenodd" /></svg>
     </div>
 
-    <div class="page page_events">
+    <div id="events" class="page page_events">
         <div class="wrap">
             <div class="block-author">
                 <div class="block-ava">
@@ -310,7 +343,7 @@
         </div>
     </div>
 
-    <div class="page page_gray page_blog blog">
+    <div id="blog" class="page page_gray page_blog blog">
         <div class="wrap">
             <h2 class="page__title">Latest from Blog</h2>
             <p class="page__subtitle">Some of the latest posts from my personal blog</p>
@@ -351,7 +384,7 @@
         </div>
     </div>
 
-    <div class="page page_letter">
+    <div id="letter" class="page page_letter">
         <div class="wrap">
             <div class="block-letter page__letter">
                 <div class="block-letter-item">
@@ -368,10 +401,10 @@
         </div>
     </div>
 
-    <footer class="footer">
+    <footer id="footer" class="footer">
         <div class="wrap">
             <div class="block-footer">
-                <div class="block-footer__item">
+                <div class="block-footer__item block-footer__item_desc">
                     <a href="##" class="block-footer__logo"></a>
                     <p class="block-footer__text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                         enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -413,10 +446,54 @@
     <script src="../js/vendor.js"></script>
     <script>
         $(document).ready(function () {
+            
             $('.block-carousel').slick({
                 dots: true,
-                arrows: false
+                arrows: false,
             });
+
+
+            $('#moreContent').click(function () {
+                $("#moreContentList").fadeIn("slow");
+                $(this).hide();
+            });
+
+
+            function menuClick(event) {
+                if (!event.target.closest('a[data-point]')) return;
+
+                headerMenu.querySelectorAll('li').forEach(item => item.classList.remove('active'));
+                event.target.parentNode.classList.add('active');
+                document.querySelector(`#${event.target.dataset.point}`).scrollIntoView({
+                    behavior: "smooth",
+                });
+                return;
+            }
+            headerMenu.addEventListener('click', menuClick);
+
+
+            function menuScroll() {
+                setTimeout(() => {
+                    if (pageYOffset > 10) return;
+                    headerMenu.querySelectorAll('li').forEach(item => item.classList.remove('active'));
+                    headerMenu.querySelector('li:first-of-type').classList.add('active');
+                }, 100)
+            }
+            document.addEventListener('scroll', menuScroll);
+
+
+            showMenu.addEventListener('click', function (event) {
+                if (!headerMenu.classList.contains('shownMenu')) {
+                    headerMenu.classList.add('shownMenu');
+                    let elem = document.createElement('button');
+                    headerMenu.append(elem);
+                    elem.classList.add('closeBtn');
+                    elem.addEventListener('click', function () {
+                        headerMenu.classList.remove('shownMenu');
+                    })
+                }
+            })
+
         });
     </script>
 </body>
